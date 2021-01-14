@@ -5,9 +5,9 @@ import time
 import urllib.request
 
 #=========================================이미지 저장해주는 코드============================================
-# driver = webdriver.Chrome() #크롬 브라우저를 킨다
-# driver.get("https://www.google.co.kr/imghp?hl=ko&tab=wi&ogbl") #크롬브라우저 이미지검색 url로 접속을 한다
-# elem = driver.find_element_by_name("q") #elem이란 변수에 q라는 이름을 가진(검색창)을 넣어준다.
+driver = webdriver.Chrome() #크롬 브라우저를 킨다
+driver.get("http://www.youth.go.kr/youth/act/actSearch/allActSearchLst.yt?sCrtfcText=&sSttemntText=&sort=&order=&page=1&rows=&kCrtfcSn=&kFcltySn=&kSnOne=&kProgrmseCode=&kSnTwo=&kSttemntManageNo=&kSttemntSn=&kCrtfcAt=&kSttemntAt=&kSttemntNo=&kExclnccrtfcAtchmnflId=&searchDtl=&search=&sActRelmcode=&sActRelmcode1=&sActRelmcode2=&sActRelmcode3=&sActRelmcode4=&sActRelmcode5=&sActRelmcode6=&sActRelmcode7=&sActRelmcode8=&sActRelmcode9=&sActRelmcode10=&sActRelmcode11=&sActRelmcode12=&nas.cmm.token.html.TOKEN=17b89c3ec71facaa8dd1f669f4693e7f&sKeyword=&sActCtprvnCode1=&sActSignguCode1=&sActCtprvnCode2=&sActSignguCode2=&sActCtprvnCode3=&sActSignguCode3=&sInsttTyCode=&sInsttTyCode2=&sTrget=&sAge=&stayng=&pc=&acteraDe=thtiMt&sActeraBeginDe=2020-12-01&sActeraEndDe=2020-12-31&sCurSearchFlag=Y&sChkSearchFlag=Y") #크롬브라우저 이미지검색 url로 접속을 한다
+# elem = driver.find_element_by_css_selector("ul.actlist-thum-ul") #elem이란 변수에 q라는 이름을 가진(검색창)을 넣어준다.
 # elem.send_keys("비트코인") #그 키에 ''안에 찾고싶은 것을 넣어준다  정확한 명령어를 모를 땐 검색하기 ex) python selenium key press 파이썬 셀레니움 키 입력
 # elem.send_keys(Keys.RETURN) # enter
 # images = driver.find_elements_by_css_selector(".rg_i.Q4LuWd")
@@ -21,7 +21,9 @@ import urllib.request
 #         count = count + 1
 #     except:
 #         pass
-# driver.close()
+time.sleep(3)
+driver.find_element_by_css_selector(".act-name-box a:first-child").click()
+driver.close()
 
 # =============================페이스북 들어가는 python코드 =========================================
 # pass1 = str("5855mj!!")
@@ -36,8 +38,8 @@ import urllib.request
 # element_pwd.send_keys(pass1) #키보드를 사용할 수 있게끔 만드는
 # element.submit()
 
-driver = webdriver.Chrome()
-driver.get("https://www.youtube.com/")
+# driver = webdriver.Chrome()
+# driver.get("https://www.youtube.com/")
 
-imgurl = driver.find_element_by_id("img").get_attribute("src")
-urllib.request.urlretrieve(imgurl, 'image/' + '11' + '.jpg')
+# imgurl = driver.find_element_by_id("img").get_attribute("src")
+# urllib.request.urlretrieve(imgurl, 'image/' + '11' + '.jpg')
